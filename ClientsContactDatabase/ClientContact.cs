@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace ClientsContactDatabase
 {
-    public partial class Form1 : Form
+    public partial class ClientContact : Form
     {
-        public Form1()
+        public ClientContact()
         {
             InitializeComponent();
         }
+
     }
 }
