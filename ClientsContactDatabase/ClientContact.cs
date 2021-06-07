@@ -58,11 +58,34 @@ namespace ClientsContactDatabase
             txtboxContactNo.Text = "";
             txtboxAddress.Text = "";
             cmbGender.Text = "";
+            txtboxContactID.Text = "";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            //Get the data from the textboxes
+            c.ContactID = int.Parse(txtboxContactID.Text);
+            c.FirstName = txtboxFirstName.Text;
+            c.LastName = txtboxLastName.Text;
+            c.ContactNo = txtboxContactNo.Text;
+            c.Address = txtboxAddress.Text;
+            c.Gender = cmbGender.Text;
+            //Update data in database
+            bool success = c.Update(c);
+            if(success==true)
+            {
+                //Updated successfully
+                MessageBox.Show("Contact updated successfully!");
+                Clear();
+            }
+            else
+            {
+                //Failed to update
+                MessageBox.Show("Failed to update contact. Try again!");
+            }
+            //Load data to GridView
+            DataTable dt = c.Select();
+            dgvContactList.DataSource = dt;
         }
 
         private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -76,6 +99,33 @@ namespace ClientsContactDatabase
             txtboxContactNo.Text = dgvContactList.Rows[rowIndex].Cells[3].Value.ToString();
             txtboxAddress.Text = dgvContactList.Rows[rowIndex].Cells[4].Value.ToString();
             cmbGender.Text = dgvContactList.Rows[rowIndex].Cells[5].Value.ToString();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //Get data from the textboxes
+            c.ContactID = Convert.ToInt32(txtboxContactID.Text);
+            bool success = c.Delete(c);
+            if (success==true)
+            {
+                //Successfully deleted
+                MessageBox.Show("Contact deleted successfully!");
+                Clear();
+
+            }
+            else
+            {
+                //Failed to delete
+                MessageBox.Show("Failed to delete contact. Try again!");
+            }
+            //Load data to GridView
+            DataTable dt = c.Select();
+            dgvContactList.DataSource = dt;
         }
     }
 }

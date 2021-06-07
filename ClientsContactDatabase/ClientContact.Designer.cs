@@ -217,6 +217,7 @@ namespace ClientsContactDatabase
             this.btnClear.TabIndex = 16;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -229,12 +230,14 @@ namespace ClientsContactDatabase
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dgvContactList
             // 
             this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContactList.Location = new System.Drawing.Point(439, 196);
             this.dgvContactList.Name = "dgvContactList";
+            this.dgvContactList.ReadOnly = true;
             this.dgvContactList.Size = new System.Drawing.Size(671, 304);
             this.dgvContactList.TabIndex = 17;
             this.dgvContactList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvContactList_RowHeaderMouseClick);
