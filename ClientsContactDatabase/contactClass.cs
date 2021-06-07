@@ -50,9 +50,87 @@ namespace ClientsContactDatabase
         //Insert data to database
         public bool Insert (contactClass c)
         {
+            //Create a default return type and set its value to false
+            bool isSuccess = false;
 
+            //Step 1 connect database
+            SQLiteConnection conn = new SQLiteConnection(myconnstrng);
+            try
+            {
+                //Step 2 create sql query to insert data
+                string sql = "INSERT INTO tbl_contact (FirstName, LastName, ContactNo, Address, Gender) VALUES (@FirstName, @LastName, @ContactNo, @Address, @Gender)";
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                //Create parameters to add data
+                cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
+                cmd.Parameters.AddWithValue("@FLastName", c.LastName);
+                cmd.Parameters.AddWithValue("@FContactNo", c.ContactNo);
+                cmd.Parameters.AddWithValue("@Address", c.@Address);
+                cmd.Parameters.AddWithValue("@Gender", c.Gender);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if(rows>0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
         }
-      
+        //Update data in database
+        public bool Update(contactClass c)
+        {
+            //Create a default return type and set its value to false
+            bool isSuccess = false;
+
+            //Step 1 connect database
+            SQLiteConnection conn = new SQLiteConnection(myconnstrng);
+            try
+            {
+                //Step 2 create sql query to update data
+                string sql = "UPDATE tbl_contact SET FirstName=@FirstName, LastName=@LastName, ContactNo=@ContactNo, Address=@Address, Gender=@Gender WHERE ContactID=@ContactID";
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                //Create parameters to add data
+                cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
+                cmd.Parameters.AddWithValue("@FLastName", c.LastName);
+                cmd.Parameters.AddWithValue("@FContactNo", c.ContactNo);
+                cmd.Parameters.AddWithValue("@Address", c.@Address);
+                cmd.Parameters.AddWithValue("@Gender", c.Gender);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+        
 
     }
 }
