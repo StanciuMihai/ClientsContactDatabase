@@ -47,11 +47,11 @@ namespace ClientsContactDatabase
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvContactList = new System.Windows.Forms.DataGridView();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtboxSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -79,6 +79,7 @@ namespace ClientsContactDatabase
             this.txtboxContactID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxContactID.Location = new System.Drawing.Point(176, 196);
             this.txtboxContactID.Name = "txtboxContactID";
+            this.txtboxContactID.ReadOnly = true;
             this.txtboxContactID.Size = new System.Drawing.Size(190, 26);
             this.txtboxContactID.TabIndex = 2;
             // 
@@ -190,6 +191,7 @@ namespace ClientsContactDatabase
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -227,13 +229,13 @@ namespace ClientsContactDatabase
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvContactList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(439, 196);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(671, 304);
-            this.dataGridView1.TabIndex = 17;
+            this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvContactList.Location = new System.Drawing.Point(439, 196);
+            this.dgvContactList.Name = "dgvContactList";
+            this.dgvContactList.Size = new System.Drawing.Size(671, 304);
+            this.dgvContactList.TabIndex = 17;
             // 
             // lblSearch
             // 
@@ -260,7 +262,7 @@ namespace ClientsContactDatabase
             this.ClientSize = new System.Drawing.Size(1135, 585);
             this.Controls.Add(this.txtboxSearch);
             this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvContactList);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -280,8 +282,9 @@ namespace ClientsContactDatabase
             this.Controls.Add(this.pictureBox1);
             this.Name = "ClientContact";
             this.Text = "Client Contact";
+            this.Load += new System.EventHandler(this.ClientContact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,7 +309,7 @@ namespace ClientsContactDatabase
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvContactList;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtboxSearch;
     }
