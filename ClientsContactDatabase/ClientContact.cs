@@ -32,6 +32,7 @@ namespace ClientsContactDatabase
             {
                 //Successfully inserted
                 MessageBox.Show("New contact successfully inserted!");
+                Clear();
             }
             else
             {
@@ -48,6 +49,33 @@ namespace ClientsContactDatabase
             //Load data to GridView
             DataTable dt = c.Select();
             dgvContactList.DataSource = dt;
+        }
+        //Method to clear fields
+        public void Clear()
+        {
+            txtboxFirstName.Text = "";
+            txtboxLastName.Text = "";
+            txtboxContactNo.Text = "";
+            txtboxAddress.Text = "";
+            cmbGender.Text = "";
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //Get data from the grid view and load it to the textboxes
+            //Identify the row on which the mouse is clicked
+            int rowIndex = e.RowIndex;
+            txtboxContactID.Text = dgvContactList.Rows[rowIndex].Cells[0].Value.ToString();
+            txtboxFirstName.Text = dgvContactList.Rows[rowIndex].Cells[1].Value.ToString();
+            txtboxLastName.Text = dgvContactList.Rows[rowIndex].Cells[2].Value.ToString();
+            txtboxContactNo.Text = dgvContactList.Rows[rowIndex].Cells[3].Value.ToString();
+            txtboxAddress.Text = dgvContactList.Rows[rowIndex].Cells[4].Value.ToString();
+            cmbGender.Text = dgvContactList.Rows[rowIndex].Cells[5].Value.ToString();
         }
     }
 }

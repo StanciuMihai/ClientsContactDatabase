@@ -58,12 +58,12 @@ namespace ClientsContactDatabase
             try
             {
                 //Step 2 create sql query to insert data
-                string sql = "INSERT INTO tbl_contact (FirstName, LastName, ContactNo, Address, Gender) VALUES (@FirstName, @LastName, @ContactNo, @Address, @Gender)";
+                string sql = "Insert INTO tbl_contact (FirstName, LastName, ContactNo, Address, Gender) VALUES(@FirstName, @LastName, @ContactNo, @Address, @Gender)";
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 //Create parameters to add data
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
-                cmd.Parameters.AddWithValue("@FLastName", c.LastName);
-                cmd.Parameters.AddWithValue("@FContactNo", c.ContactNo);
+                cmd.Parameters.AddWithValue("@LastName", c.LastName);
+                cmd.Parameters.AddWithValue("@ContactNo", c.ContactNo);
                 cmd.Parameters.AddWithValue("@Address", c.@Address);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
 
@@ -103,8 +103,8 @@ namespace ClientsContactDatabase
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 //Create parameters to add data
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
-                cmd.Parameters.AddWithValue("@FLastName", c.LastName);
-                cmd.Parameters.AddWithValue("@FContactNo", c.ContactNo);
+                cmd.Parameters.AddWithValue("@LastName", c.LastName);
+                cmd.Parameters.AddWithValue("@ContactNo", c.ContactNo);
                 cmd.Parameters.AddWithValue("@Address", c.@Address);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
                 cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
