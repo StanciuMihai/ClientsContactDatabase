@@ -37,8 +37,8 @@ namespace ClientsContactDatabase
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtboxLastName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.txtboxContactNumber = new System.Windows.Forms.TextBox();
-            this.lblContactNumber = new System.Windows.Forms.Label();
+            this.txtboxContactNo = new System.Windows.Forms.TextBox();
+            this.lblContactNo = new System.Windows.Forms.Label();
             this.txtboxAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
@@ -118,23 +118,23 @@ namespace ClientsContactDatabase
             this.lblLastName.TabIndex = 5;
             this.lblLastName.Text = "Last Name";
             // 
-            // txtboxContactNumber
+            // txtboxContactNo
             // 
-            this.txtboxContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxContactNumber.Location = new System.Drawing.Point(176, 329);
-            this.txtboxContactNumber.Name = "txtboxContactNumber";
-            this.txtboxContactNumber.Size = new System.Drawing.Size(190, 26);
-            this.txtboxContactNumber.TabIndex = 8;
+            this.txtboxContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxContactNo.Location = new System.Drawing.Point(176, 329);
+            this.txtboxContactNo.Name = "txtboxContactNo";
+            this.txtboxContactNo.Size = new System.Drawing.Size(190, 26);
+            this.txtboxContactNo.TabIndex = 8;
             // 
-            // lblContactNumber
+            // lblContactNo
             // 
-            this.lblContactNumber.AutoSize = true;
-            this.lblContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactNumber.Location = new System.Drawing.Point(42, 332);
-            this.lblContactNumber.Name = "lblContactNumber";
-            this.lblContactNumber.Size = new System.Drawing.Size(125, 20);
-            this.lblContactNumber.TabIndex = 7;
-            this.lblContactNumber.Text = "Contact Number";
+            this.lblContactNo.AutoSize = true;
+            this.lblContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactNo.Location = new System.Drawing.Point(42, 332);
+            this.lblContactNo.Name = "lblContactNo";
+            this.lblContactNo.Size = new System.Drawing.Size(89, 20);
+            this.lblContactNo.TabIndex = 7;
+            this.lblContactNo.Text = "Contact No";
             // 
             // txtboxAddress
             // 
@@ -269,8 +269,8 @@ namespace ClientsContactDatabase
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.txtboxAddress);
             this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.txtboxContactNumber);
-            this.Controls.Add(this.lblContactNumber);
+            this.Controls.Add(this.txtboxContactNo);
+            this.Controls.Add(this.lblContactNo);
             this.Controls.Add(this.txtboxLastName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtboxFirstName);
@@ -296,8 +296,8 @@ namespace ClientsContactDatabase
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtboxLastName;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.TextBox txtboxContactNumber;
-        private System.Windows.Forms.Label lblContactNumber;
+        private System.Windows.Forms.TextBox txtboxContactNo;
+        private System.Windows.Forms.Label lblContactNo;
         private System.Windows.Forms.TextBox txtboxAddress;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblGender;

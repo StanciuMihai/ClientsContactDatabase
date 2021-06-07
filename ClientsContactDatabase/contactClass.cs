@@ -26,7 +26,30 @@ namespace ClientsContactDatabase
         public DataTable Select()
         {
             //Step 1 Database connection
-            
+            SQLiteConnection conn = new SQLiteConnection(myconnstrng);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2 Writing SQLite query
+                string sql = "SELECT * FROM tbl_contact";
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);   
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        //Insert data to database
+        public bool Insert (contactClass c)
+        {
 
         }
       
