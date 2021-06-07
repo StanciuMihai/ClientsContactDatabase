@@ -107,6 +107,7 @@ namespace ClientsContactDatabase
                 cmd.Parameters.AddWithValue("@FContactNo", c.ContactNo);
                 cmd.Parameters.AddWithValue("@Address", c.@Address);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
+                cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -130,7 +131,44 @@ namespace ClientsContactDatabase
             return isSuccess;
         }
 
-        
+        //Delete data from database
+        public bool Delete(contactClass c)
+        {
+            //Create a default return type and set its value to false
+            bool isSuccess = false;
+
+            //Step 1 connect database
+            SQLiteConnection conn = new SQLiteConnection(myconnstrng);
+            try
+            {
+                //Step 2 create sql query to update data
+                string sql = "DELETE FROM tbl_contact WHERE ContactID=@ContactID";
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                //Create parameters to add data
+                cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
+                
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
 
     }
 }
