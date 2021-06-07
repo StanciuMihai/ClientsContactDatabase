@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,7 +30,7 @@ namespace ClientsContactDatabase
             c.Gender = cmbGender.Text;
             //Insert data
             bool success = c.Insert(c);
-            if(success==true)
+            if (success == true)
             {
                 //Successfully inserted
                 MessageBox.Show("New contact successfully inserted!");
@@ -72,7 +74,7 @@ namespace ClientsContactDatabase
             c.Gender = cmbGender.Text;
             //Update data in database
             bool success = c.Update(c);
-            if(success==true)
+            if (success == true)
             {
                 //Updated successfully
                 MessageBox.Show("Contact updated successfully!");
@@ -111,7 +113,7 @@ namespace ClientsContactDatabase
             //Get data from the textboxes
             c.ContactID = Convert.ToInt32(txtboxContactID.Text);
             bool success = c.Delete(c);
-            if (success==true)
+            if (success == true)
             {
                 //Successfully deleted
                 MessageBox.Show("Contact deleted successfully!");
@@ -126,6 +128,19 @@ namespace ClientsContactDatabase
             //Load data to GridView
             DataTable dt = c.Select();
             dgvContactList.DataSource = dt;
+        }
+
+        static string myconnstr = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+        private void txtboxSearch_TextChanged(object sender, EventArgs e)
+        {
+            //Get the value from the search box
+            string keyword = txtboxSearch.Text;
+            SQLiteConnection conn = new SQLiteConnection(myconnstr);
+            SQLiteDataAdapter sda = new SQLiteDataAdapter("SELECT * FROM tbl_contact WHERE FirstName LIKE '%" + keyword + "%' OR LastName LIKE '%" + keyword + "%' OR ContactNo LIKE '%" + keyword + "%' OR Address LIKE '%" + keyword + "%'", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvContactList.DataSource = dt;
+
         }
     }
 }
