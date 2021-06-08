@@ -56,8 +56,10 @@ namespace ClientsContactDatabase
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(176, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(185, 25);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(775, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -182,10 +184,11 @@ namespace ClientsContactDatabase
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(455, 521);
+            this.btnAdd.Location = new System.Drawing.Point(439, 517);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(147, 52);
             this.btnAdd.TabIndex = 13;
@@ -195,10 +198,11 @@ namespace ClientsContactDatabase
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(617, 521);
+            this.btnUpdate.Location = new System.Drawing.Point(601, 517);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(147, 52);
             this.btnUpdate.TabIndex = 14;
@@ -208,10 +212,11 @@ namespace ClientsContactDatabase
             // 
             // btnClear
             // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.BackColor = System.Drawing.Color.Orange;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(942, 521);
+            this.btnClear.Location = new System.Drawing.Point(926, 517);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(147, 52);
             this.btnClear.TabIndex = 16;
@@ -221,10 +226,11 @@ namespace ClientsContactDatabase
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.BackColor = System.Drawing.Color.Crimson;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(780, 521);
+            this.btnDelete.Location = new System.Drawing.Point(764, 517);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(147, 52);
             this.btnDelete.TabIndex = 15;
@@ -234,11 +240,14 @@ namespace ClientsContactDatabase
             // 
             // dgvContactList
             // 
+            this.dgvContactList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContactList.Location = new System.Drawing.Point(439, 196);
             this.dgvContactList.Name = "dgvContactList";
             this.dgvContactList.ReadOnly = true;
-            this.dgvContactList.Size = new System.Drawing.Size(671, 304);
+            this.dgvContactList.Size = new System.Drawing.Size(638, 300);
             this.dgvContactList.TabIndex = 17;
             this.dgvContactList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvContactList_RowHeaderMouseClick);
             // 
@@ -254,10 +263,12 @@ namespace ClientsContactDatabase
             // 
             // txtboxSearch
             // 
+            this.txtboxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtboxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxSearch.Location = new System.Drawing.Point(501, 159);
             this.txtboxSearch.Name = "txtboxSearch";
-            this.txtboxSearch.Size = new System.Drawing.Size(609, 26);
+            this.txtboxSearch.Size = new System.Drawing.Size(576, 26);
             this.txtboxSearch.TabIndex = 19;
             this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
             // 
@@ -265,7 +276,7 @@ namespace ClientsContactDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 585);
+            this.ClientSize = new System.Drawing.Size(1134, 581);
             this.Controls.Add(this.txtboxSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.dgvContactList);
@@ -286,6 +297,7 @@ namespace ClientsContactDatabase
             this.Controls.Add(this.txtboxContactID);
             this.Controls.Add(this.lblContactID);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(1150, 620);
             this.Name = "ClientContact";
             this.Text = "Client Contact";
             this.Load += new System.EventHandler(this.ClientContact_Load);
