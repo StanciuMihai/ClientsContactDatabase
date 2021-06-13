@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Data.Sqlite, Version=5.0.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Sqlite.Core.5.0.6\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
@@ -81,6 +84,7 @@
     <Compile Include="contactClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="favicon.ico" />
     <EmbeddedResource Include="ClientContact.resx">
       <DependentUpon>ClientContact.cs</DependentUpon>
     </EmbeddedResource>
